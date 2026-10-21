@@ -92,5 +92,11 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
                 DESTINATION share/carbon-spacemouse
         )
 
+        # Install python package, as the monolith install does: the _spacemouse extension is loaded through it
+        install(DIRECTORY python/ DESTINATION python
+                FILES_MATCHING
+                PATTERN "*.py"
+        )
+
  endif()
 endif()
